@@ -4,7 +4,7 @@
 			<div class="kboard-title" itemprop="name">
 				<h1><?php echo $content->title?></h1>
 			</div>
-			
+
 			<div class="kboard-detail">
 				<?php if($content->category1):?>
 				<div class="detail-attr detail-category1">
@@ -36,24 +36,20 @@
 					<div class="detail-value"><?php echo $content->view?></div>
 				</div>
 			</div>
-			
+
 			<div class="kboard-content" itemprop="description">
 				<div class="content-view">
 					<?php echo $content->getDocumentOptionsHTML()?>
 					<?php echo $content->content?>
 				</div>
 			</div>
-			
+
 			<div class="kboard-document-action">
-				<div class="left">
-					<button type="button" class="kboard-button-action kboard-button-like" onclick="kboard_document_like(this)" data-uid="<?php echo $content->uid?>" title="<?php echo __('Like', 'kboard')?>"><?php echo __('Like', 'kboard')?> <span class="kboard-document-like-count"><?php echo intval($content->like)?></span></button>
-					<button type="button" class="kboard-button-action kboard-button-unlike" onclick="kboard_document_unlike(this)" data-uid="<?php echo $content->uid?>" title="<?php echo __('Unlike', 'kboard')?>"><?php echo __('Unlike', 'kboard')?> <span class="kboard-document-unlike-count"><?php echo intval($content->unlike)?></span></button>
-				</div>
 				<div class="right">
 					<button type="button" class="kboard-button-action kboard-button-print" onclick="kboard_document_print('<?php echo $url->getDocumentPrint($content->uid)?>')" title="<?php echo __('Print', 'kboard')?>"><?php echo __('Print', 'kboard')?></button>
 				</div>
 			</div>
-			
+
 			<?php if($content->isAttached()):?>
 			<div class="kboard-attach">
 				<?php foreach($content->getAttachmentList() as $key=>$attach):?>
@@ -62,11 +58,11 @@
 			</div>
 			<?php endif?>
 		</div>
-		
+
 		<?php if($content->visibleComments()):?>
 		<div class="kboard-comments-area"><?php echo $board->buildComment($content->uid)?></div>
 		<?php endif?>
-		
+
 		<div class="kboard-document-navi">
 			<div class="kboard-prev-document">
 				<?php
@@ -81,7 +77,7 @@
 				</a>
 				<?php endif?>
 			</div>
-			
+
 			<div class="kboard-next-document">
 				<?php
 				$top_content_uid = $content->getNextUID();
@@ -96,7 +92,7 @@
 				<?php endif?>
 			</div>
 		</div>
-		
+
 		<div class="kboard-control">
 			<div class="left">
 				<a href="<?php echo $url->set('mod', 'list')->toString()?>" class="kboard-default-button-small"><?php echo __('List', 'kboard')?></a>
@@ -109,11 +105,5 @@
 			</div>
 			<?php endif?>
 		</div>
-		
-		<?php if($board->contribution() && !$board->meta->always_view_list):?>
-		<div class="kboard-default-poweredby">
-			<a href="http://www.cosmosfarm.com/products/kboard" onclick="window.open(this.href);return false;" title="<?php echo __('KBoard is the best community software available for WordPress', 'kboard')?>">Powered by KBoard</a>
-		</div>
-		<?php endif?>
 	</div>
 </div>

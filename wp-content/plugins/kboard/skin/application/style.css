@@ -215,7 +215,7 @@ button.kboard-default-button-small:active { opacity: 0.7; }
 	#kboard-default-list .kboard-search select { float: left; margin-right: 1%; width: 29%; min-width: 29%; height: 28px; line-height: 28px; box-sizing: border-box; }
 	#kboard-default-list .kboard-search input { float: left; margin-right: 1%; width: 49%; min-width: 49%; height: 28px; line-height: 28px; box-sizing: border-box; }
 	#kboard-default-list .kboard-search button { float: left; width: 20%; min-width: 20%; box-sizing: border-box; }
-	
+
 	#kboard-default-editor select,
 	#kboard-default-editor input[type=text],
 	#kboard-default-editor input[type=email],
@@ -227,7 +227,7 @@ button.kboard-default-button-small:active { opacity: 0.7; }
 	#kboard-default-editor .kboard-attr-row .attr-name { padding: 0; width: 100%; font-size: 14px; }
 	#kboard-default-editor .kboard-attr-row .attr-value { margin: 0; }
 	#kboard-default-editor .kboard-attr-row .attr-value .kboard-tree-category-wrap select { margin-bottom: 10px; width: 100%; }
-	
+
 	#kboard-default-document .kboard-title h1 { padding: 10px 5px; font-size: 18px; }
 	#kboard-default-document .kboard-content .content-view { padding: 10px 5px; }
 	#kboard-default-document .kboard-detail .detail-attr { clear: both; padding: 10px 5px; line-height: normal; }
@@ -235,4 +235,14 @@ button.kboard-default-button-small:active { opacity: 0.7; }
 	#kboard-default-document .kboard-attach { margin: 0 5px; padding: 10px 0 5px 0; }
 	#kboard-default-document .kboard-document-navi .kboard-prev-document { width: 100%; }
 	#kboard-default-document .kboard-document-navi .kboard-next-document { margin-top: 10px; float: left; width: 100%; text-align: left; }
+}
+
+#kboard-default-list .kboard-list table td.kboard-list-name { width: 120px; }
+#kboard-default-list .kboard-list table td.kboard-list-participation { width: 55px; }
+#kboard-default-list .kboard-list table td.kboard-list-birthday { width: 75px; }
+
+@media screen and (max-width: 600px) {
+	#kboard-default-list .kboard-list table td.kboard-list-name,
+	#kboard-default-list .kboard-list table td.kboard-list-participation,
+	#kboard-default-list .kboard-list table td.kboard-list-birthday { display: none; }
 }
