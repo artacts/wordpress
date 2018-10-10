@@ -44,18 +44,19 @@
 				</div>
 			</div>
 
+			<?php if($content->isAttached()):?>
+			<div class="kboard-attach">
+				<?php foreach($content->getAttachmentList() as $key=>$attach):?>
+				<button type="button" class="kboard-button-action kboard-button-download" onclick="window.location.href='<?php echo $url->getDownloadURLWithAttach($content->uid, $key)?>'" title="<?php echo sprintf(__('Download %s', 'kboard'), $attach[1])?>"><img width='300' src='<?php echo $attach[0]?>' /></button>
+				<?php endforeach?>
+			</div>
+
 			<div class="kboard-document-action">
 				<div class="right">
 					<button type="button" class="kboard-button-action kboard-button-print" onclick="kboard_document_print('<?php echo $url->getDocumentPrint($content->uid)?>')" title="<?php echo __('Print', 'kboard')?>"><?php echo __('Print', 'kboard')?></button>
 				</div>
 			</div>
 
-			<?php if($content->isAttached()):?>
-			<div class="kboard-attach">
-				<?php foreach($content->getAttachmentList() as $key=>$attach):?>
-				<button type="button" class="kboard-button-action kboard-button-download" onclick="window.location.href='<?php echo $url->getDownloadURLWithAttach($content->uid, $key)?>'" title="<?php echo sprintf(__('Download %s', 'kboard'), $attach[1])?>"><?php echo $attach[1]?></button>
-				<?php endforeach?>
-			</div>
 			<?php endif?>
 		</div>
 
